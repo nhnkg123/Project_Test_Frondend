@@ -1,0 +1,32 @@
+<div class="main">
+    <form class="pt-3" action="/getCreatePostPage">
+        <button class="btn btn-primary" type="submit">Create Post</button>
+    </form>
+    {{#each posts}}
+    <hr>
+    <h1 class="text-center pt-5">{{title}}</h1>
+    <h5 class="pt-3">Author: {{name}}</h5>
+    <h5 class="pb-3">Created at: {{createdAt}}</h5>
+    <p class="pb-5">{{body}}</p>
+
+    <p class="pl-10">{{totalComments}} replies</p>
+
+
+    {{#each comments}}
+    <div class="comments pl-5 pb-5">
+        <p>{{email}}</p>
+        <h5>{{createdAt}}</h5>
+        <p>{{body}}</p>
+        <a class="reply_btn" href="#">Reply</a>
+    </div>
+    {{/each}}
+
+    {{/each}}
+    <section class="pagination">
+        <a href="/?page=1">1</a>
+        <a href="/?page=2">2</a>
+        <a href="/?page=3">3</a>
+        <a href="/?page=4">4</a>
+        <a href="/?page=5">5</a>
+    </section>
+</div>
